@@ -1,5 +1,5 @@
 import abc
-import model
+from domain import model
 
 
 class AbstractRepository(abc.ABC):
@@ -11,9 +11,6 @@ class AbstractRepository(abc.ABC):
     def get(self, reference) -> model.Batch:
         raise NotImplementedError
 
-    @abc.abstractmethod
-    def list(self):
-        raise NotImplementedError
 
 class SqlAlchemyRepository(AbstractRepository):
     def __init__(self, session):
