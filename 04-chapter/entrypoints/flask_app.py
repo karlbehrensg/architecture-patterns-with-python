@@ -36,4 +36,4 @@ def allocate_endpoint():
     return {"batchref": batchref}, 201
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=config.FLASK_PORT)
